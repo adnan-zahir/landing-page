@@ -1,9 +1,55 @@
 main {
-    .content {
-        background-image: url('../public/images/jumbotron.jpg');
-        background-color: #fff;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+    .jumbotron {
+        height: 100vh;
+        width: 100%;
+        
+        .jumbotron__filter {
+            display: block;
+            text-align: center;
+            background: rgba( 255, 255, 255, 0.25 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 10px );
+            height: 100%;
+            display: grid;
+            place-items: center;
+            transition: transform 0.5s ease;
+
+            &.open {
+                transform: translateY(-100%);
+            }
+            
+            .jumbotron__filter__logo {
+                max-width: 70%;
+                transition: max-width 0.1s ease;
+
+                &:hover {
+                    max-width: calc(70% - 30px);
+                }
+            }
+
+        }
+
+        .carousel {
+            position: absolute;
+            top: 0;
+            height: 100vh;
+            overflow: scroll;
+            display: grid;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            scroll-padding: 50%;
+            z-index: -1;
+            
+            .carousel__item {
+                scroll-snap-align: center;
+
+                img {
+                    width: 100vw;
+                    height: 100vh;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }            
+        }
     }
 }
