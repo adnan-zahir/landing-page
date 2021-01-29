@@ -6,6 +6,9 @@ const DATA = {
     {
       image: 'carousel_2.jpg',
     },
+    {
+      image: 'carousel_3.png',
+    },
   ],
 };
 

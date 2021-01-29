@@ -1,0 +1,37 @@
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+  
+  .header__inner {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    transition: background-color 0.5s ease;
+
+    &.active {
+      background-color: white;
+    }
+
+    .header__logo {
+      width: 15%;
+      min-width: 86px;
+    }
+
+    .call-to-action {
+      letter-spacing: 0.2em;
+      padding: 15px 20px;
+      box-shadow: 0 0 5px gray;
+      border: 0;
+      border-radius: 30px;
+      font-weight: bold;
+      background-color: rgb(255, 255, 110);
+      outline: 0 solid black;
+      transition: background-color 300ms ease;      &:hover {
+        background-color: rgb(255, 255, 176);
+      }
+    }
+  }
+}

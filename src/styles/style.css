@@ -1,66 +1,202 @@
-main .jumbotron {
-  height: 100vh;
+header {
   width: 100%;
+  position: fixed;
+  z-index: 9;
 }
 
-main .jumbotron .jumbotron__filter {
+header .header__inner {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px 15px;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+header .header__inner.active {
+  background-color: white;
+}
+
+header .header__inner .header__logo {
+  width: 15%;
+  min-width: 86px;
+}
+
+header .header__inner .call-to-action {
+  letter-spacing: 0.2em;
+  padding: 15px 20px;
+  -webkit-box-shadow: 0 0 5px gray;
+          box-shadow: 0 0 5px gray;
+  border: 0;
+  border-radius: 30px;
+  font-weight: bold;
+  background-color: #ffff6e;
+  outline: 0 solid black;
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+}
+
+header .header__inner .call-to-action:hover {
+  background-color: #ffffb0;
+}
+
+.jumbotron {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.jumbotron.open .jumbotron__filter {
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+}
+
+.jumbotron .jumbotron__filter {
   display: block;
+  position: relative;
+  height: 100%;
+  z-index: 10;
   text-align: center;
   background: rgba(255, 255, 255, 0.25);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  height: 100%;
   display: -ms-grid;
   display: grid;
   place-items: center;
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transition: -webkit-transform 2s ease;
+  transition: -webkit-transform 2s ease;
+  transition: transform 2s ease;
+  transition: transform 2s ease, -webkit-transform 2s ease;
 }
 
-main .jumbotron .jumbotron__filter.open {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-}
-
-main .jumbotron .jumbotron__filter .jumbotron__filter__logo {
+.jumbotron .jumbotron__filter .jumbotron__filter__logo {
   max-width: 70%;
+  cursor: pointer;
   -webkit-transition: max-width 0.1s ease;
   transition: max-width 0.1s ease;
 }
 
-main .jumbotron .jumbotron__filter .jumbotron__filter__logo:hover {
+.jumbotron .jumbotron__filter .jumbotron__filter__logo:hover {
   max-width: calc(70% - 30px);
 }
 
-main .jumbotron .carousel {
+.jumbotron .carousel {
   position: absolute;
   top: 0;
-  height: 100vh;
-  overflow: scroll;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.jumbotron .carousel .carousel__button__container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.jumbotron .carousel .carousel__button__container.visible {
+  opacity: 1;
+}
+
+.jumbotron .carousel .carousel__button__container .carousel__button--left,
+.jumbotron .carousel .carousel__button__container .carousel__button--right {
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 30px 15px;
+  border: 0;
+}
+
+.jumbotron .carousel .carousel__button__container .carousel__button--left .material-icons,
+.jumbotron .carousel .carousel__button__container .carousel__button--right .material-icons {
+  font-size: 200%;
+  color: #5e5e5e;
+}
+
+.jumbotron .carousel .carousel__button__container .carousel__button--left {
+  border-radius: 0 40% 40% 0;
+}
+
+.jumbotron .carousel .carousel__button__container .carousel__button--right {
+  border-radius: 40% 0 0 40%;
+}
+
+.jumbotron .carousel .carousel__inner {
+  height: 100%;
+  width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
-  scroll-snap-stop: always;
-  scroll-padding: 50%;
-  z-index: -1;
+  overflow: hidden;
 }
 
-main .jumbotron .carousel .carousel__item {
-  scroll-snap-align: center;
-}
-
-main .jumbotron .carousel .carousel__item img {
-  width: 100vw;
+.jumbotron .carousel .carousel__inner .carousel__item {
   height: 100vh;
+}
+
+.jumbotron .carousel .carousel__inner .carousel__item img {
+  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+main {
+  width: 100%;
+}
+
+main section {
+  display: none;
+  gap: 10px;
+}
+
+main section .menus {
+  padding: 10px;
+}
+
+main section .menus .menu-list .menu__title {
+  text-align: center;
+}
+
+main section .menus .menu-list .menu__item {
+  position: relative;
+  border-bottom: 1px solid black;
+  padding: 0.5em 0;
+}
+
+main section .menus .menu-list .menu__item .menu__name,
+main section .menus .menu-list .menu__item .menu__desc {
+  line-height: 1.5em;
+}
+
+main section .menus .menu-list .menu__item .menu__price {
+  position: absolute;
+  top: 0.8em;
+  right: 0;
 }
 
 *,
@@ -70,5 +206,29 @@ main .jumbotron .carousel .carousel__item img {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  overflow: hidden;
+}
+
+body a {
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body button {
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
