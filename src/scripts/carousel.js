@@ -17,14 +17,6 @@ const renderCarouselItems = () => {
             <p id="carousel_${num}">${item.desc}</p>
           </div>
         </div>
-        <div class="carousel__bg-modal" id="carousel_${num}-modal">
-            <div class="carousel__modal-content">
-                <h3>${item.name}</h3>
-                <span>${item.price}</span>
-                <p>${item.longdesc}</p>
-                <button class="modal__order-button">ORDER</button>
-            </div>
-        </div>
       </div>
     `);
     num += 1;
@@ -33,7 +25,7 @@ const renderCarouselItems = () => {
 
 const setCarouselWidth = () => {
   $('.carousel__inner').css('grid-template-columns',
-    `repeat(${items.length}, 100vw)`);
+    `repeat(${items.length}, 100%)`);
 
   renderCarouselItems();
 };
@@ -43,26 +35,20 @@ const scrollRight = () => {
   $('.carousel__inner').animate({ scrollLeft: `+=${scrollDistance}` }, 500, 'swing');
 };
 
-const scrollLeft = () => {
+const scrollToFirst = () => {
   const scrollDistance = $('.carousel__item').width();
-  $('.carousel__inner').animate({ scrollLeft: `-=${scrollDistance}` }, 500, 'swing');
+  $('.carousel__inner').animate({ scrollLeft: `-=${scrollDistance * items.length}` }, 500, 'swing');
 };
 
-$(() => {
-  $('.carousel__button--right').on('click', scrollRight);
-  $('.carousel__button--left').on('click', scrollLeft);
+$(() => { // auto scrolling carousel
+  const carouselLen = items.length;
+  const interval = 5000;
+  setInterval(() => {
+    scrollRight();
+  }, interval);
+  setInterval(() => {
+    scrollToFirst();
+  }, interval * carouselLen);
 });
 
 setCarouselWidth();
-
-$('.carousel__desc .card').on('click', (e) => { // popup window
-  const id = $(e.target).attr('id');
-  $(`.carousel__bg-modal#${id}-modal`)
-    .css('display', 'flex');
-  $('.carousel__bg-modal').on('click', () => {
-    $(`.carousel__bg-modal#${id}-modal`)
-      .css('display', 'none');
-  });
-
-  $('.modal__order-button').on('click', () => $('.call-to-action').click());
-});

@@ -3,56 +3,109 @@
 main {
     width: 100%;
 
+    section#sect0 {
+
+
+        .widget {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+            gap: 30px;
+
+            .widget-1,
+            .widget-2,
+            .widget-3 {
+                flex: 1;
+                text-align: center;
+                font-weight: normal;
+            }
+
+            img {
+                max-width: 192px;
+            }
+
+            h3 {
+                font-size: 2em;
+                color: color(myred);
+            }
+        }
+    }
+
     section#sect1 {
-        display: none;
         gap: 10px;
 
         .menus {
-        padding: 10px;
 
             .menu-list {
                 display: grid;
                 grid-template-columns: 1fr;
 
                 .menu__title {
-                    text-align: center;
-                    font-weight: normal;
-                    font-size: 2em;
+                    background-image:   url('../public/images/menu/menu-overlay.png'),
+                                        radial-gradient(rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.5)),
+                                        url('../public/images/menu/menu-title.jpg');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 50vh;
+                    display: grid;
+                    place-items: center;
+                    
+                    h2 {
+                        text-align: center;
+                        font-weight: normal;
+                        font-size: 2em;
+                        font-family: 'Fraunces', serif;
+                        color: white;
+                    }
                 }
                 
                 .menu__item {
+                    height: 128px;
                     border: 0;
                     border-radius: 5px;
                     box-shadow: 0 3px 5px 3px lightgray;
-                    padding: 0.5em;
-                    margin-top: 1em;
+                    margin: 0.5em 10px;
                     display: grid;
-                    grid-template-columns: auto 30%;
-                    grid-auto-rows: 1fr auto auto;
+                    grid-template-columns: 128px auto 20%;
+                    grid-auto-rows: repeat(2, auto);
                     grid-template-areas: 
-                        'name price'
-                        'desc desc'
-                        'input input';
-                
+                        'img name price'
+                        'img input input';
+                    background-color: color(myyellow);
+                    font-family: 'Fraunces', serif;
+
                     .menu__name,
-                    .menu__desc,
                     .menu__price {
                         line-height: 1.5em;
                     }
 
+                    .menu__img {
+                        grid-area: img;
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            border-radius: 5px 0 0 5px;
+                        }
+                    }
+
                     .menu__name {
                         grid-area: name;
+                        padding-left: 15px;
                         font-size: 1.5em;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     .menu__price {
                         grid-area: price;
-                        font-size: 1.3em;
+                        font-size: 1.5em;
+                        padding-right: 15px;
                         text-align: right;
-                    }
-
-                    .menu__desc {
-                        grid-area: desc;
                     }
 
                     .input-number {
@@ -74,139 +127,86 @@ main {
                             text-align: center;
                             border-radius: 20px;
                             border: 0;
-                            background-color: color(myyellow);
+                            background-color: white;
                         }
                     }
                 }
             }
         }
 
-        .order-form {
-            background-color: color(myyellow);
-            margin: 0 10px;
-            padding: 10px;
-            border-radius: 10px;
-
-            label {
-                display: block;
-                margin: 0 auto;
-                margin-bottom: 10px;
-
-                input,
-                textarea {
-                    display: block;
-                    width: 100%;
-                    line-height: 2em;
-                    padding-left: 10px;
-                    border: 0;
-
-                    &:focus {
-                        border-bottom: 2px solid color(myred);
-                    }
-                }
-
-                textarea {
-                    resize: none;
-                    height: 4em;
-                }
-            }
-
-            input[type=submit] {
-                width: 100%;
-                background-color: color(myred);
-                color: white;
-                border-radius: 30px;
-                border: 0;
-
-                &:hover {
-                    background-color: lighten($color: color(myred), $amount: 10%);
-                }
-            }
+        .order-button {
+            display: block;
+            width: 90%;
+            background-color: color(myred);
+            color: white;
+            columns: white;
+            padding: 0 1em;
+            margin: 1em auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 0;
+            border-radius: 2em;
+            position: sticky;
+            bottom: 10px;
+            font-size: 1.2em;
+            z-index: 10;
         }
     }
 
     section#sect2 {
-        display: none;
 
-        .about-us {
+        .contact {
+            width: 100%;
 
-
-            .widget {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: 30px 0;
-                gap: 30px;
-
-                .widget-1,
-                .widget-2,
-                .widget-3 {
-                    flex: 1;
-                    text-align: center;
-                    font-weight: normal;
-                }
+            .contact__inner {
+                position: relative;
+                background-color: color(myred);
+                padding: 20px;
 
                 img {
-                    max-width: 192px;
+                    display: block;
+                    margin: 0 auto;
+                    width: 72px;
+                    padding-top: 2em;
                 }
 
-                h3 {
-                    font-size: 2em;
-                    color: color(myred);
+                .contact__content {
+                    padding-top: 3em;
+                    color: white;
+
+                    h3 {
+                        font-size: 2em;
+                    }
+
+                    h4 {
+                        font-size: 1.5em;
+                        padding-bottom: 0.5em;
+                    }
+
+                    p {
+                        padding-bottom: 0.5em;
+                    }
+
+                    span {
+                        display: block;
+                        line-height: 2em;
+                    }
                 }
             }
 
-            .contact {
-                width: 100%;
-
-                .contact__inner {
-                    position: relative;
-                    background-color: color(myred);
-                    padding: 20px;
-
-                    img {
-                        display: block;
-                        margin: 0 auto;
-                        width: 72px;
-                        padding-top: 2em;
-                    }
-
-                    .contact__content {
-                        padding-top: 3em;
-                        color: white;
-
-                        h3 {
-                            font-size: 2em;
-                        }
-
-                        h4 {
-                            font-size: 1.5em;
-                            padding-bottom: 0.5em;
-                        }
-
-                        p {
-                            padding-bottom: 0.5em;
-                        }
-
-                        span {
-                            display: block;
-                            line-height: 2em;
-                        }
-                    }
-                }
-
-                .contact__inner::before {
-                    content: "";
-                    background-image: url('../public/images/contact.png');
-                    background-size: cover;
-                    background-position: center;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    opacity: 0.2;
-                }
+            .contact__inner::before {
+                content: "";
+                background-image: url('../public/images/contact.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0.2;
             }
         }
     }
