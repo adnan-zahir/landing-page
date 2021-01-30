@@ -26,9 +26,16 @@ body {
         text-decoration: none;
     }
 
-    button {
+    button,
+    .btn {
         min-width: 44px;
         min-height: 44px;
         cursor: pointer;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
     }
 }

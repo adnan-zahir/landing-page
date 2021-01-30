@@ -10,10 +10,12 @@
 <body>
     <header>
         <div class="header__inner">
-            <img src="./images/logo-exor.png" alt="Dapoer Exor Logo" class="header__logo">
-            <a class="call-to-action">
-                ORDER
-            </a>
+            <div class="header__logo">
+                <img src="./images/logo-exor.png" alt="Dapoer Exor Logo">
+            </div>
+            <div class="call-to-action">
+                <a href="#"><span>MENU</span></a>
+            </div>
         </div>
     </header>
     <main>
@@ -34,69 +36,61 @@
                 </div>
             </div>
         </div>
-        <section>
+        <section id="sect1">
             <article class="menus">
                 <div class="menu-list">
-                    <h2 class="menu__title">FOODS</h2>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
-                    <div class="menu__item">
-                        <div class="menu__name">Food Menu</div>
-                        <div class="menu__desc">This is a menu, Lorem ipsum dolor sit amet.</div>
-                        <div class="menu__price">20.000</div>
-                    </div>
+                    <h2 class="menu__title">MENU</h2>
                 </div>
             </article>
+            <article class="order-form">
+                <div class="form-container">
+                    <form action="#">
+                        <label for="name">
+                            <input type="text" name="name" placeholder="Nama">
+                        </label>
+                        <label for="contact">
+                            <input type="text" name="contact" placeholder="Kontak">
+                        </label>
+                        <label for="address">
+                            <textarea name="address" placeholder="Alamat"></textarea>
+                        </label>
+                        <label for="note">
+                            <input type="text" name="note" placeholder="Catatan">
+                        </label>
+                        <input type="submit" class="btn" value="ORDER">
+                    </form>
+                </div>
+            </article>
+        </section>
+        <section id="sect2">
             <article class="about-us">
-
+                <div class="widget">
+                    <div class="widget-1">
+                        <img src="./images/widget_1.png" alt="">
+                        <h3>Fresh Food</h3>
+                    </div>
+                    <div class="widget-2">
+                        <img src="./images/widget_2.png" alt="">
+                        <h3>Fast Service</h3>
+                    </div>
+                    <div class="widget-3">
+                        <img src="./images/widget_3.png" alt="">
+                        <h3>Delivery</h3>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact__inner">
+                        <img src="./images/contact.png" alt="Contact">
+                        <div class="contact__content">
+                            <h3>Contact</h3>
+                            <h4>Dapoer ExOr</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique iusto eaque rem dolorem tempore eveniet quibusdam deleniti? Laudantium, odio ea!</p>
+                            <span><i class="material-icons">mail</i> Lorem ipsum dolor sit amet.</span>
+                            <span><i class="material-icons">phone</i> Lorem ipsum dolor sit amet.</span>
+                            <span><i class="material-icons">facebook</i> Lorem ipsum dolor sit amet.</span>
+                        </div>
+                    </div>
+                </div>
             </article>
         </section>
     </main>

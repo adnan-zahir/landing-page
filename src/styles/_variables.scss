@@ -1,0 +1,8 @@
+$colors: (
+  myyellow:  rgb(255, 246, 167),
+  myred:  rgb(214, 68, 68),
+);
+
+@function color($color) {
+  @return map-get($colors, $color);
+}
