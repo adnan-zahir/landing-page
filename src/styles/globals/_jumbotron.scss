@@ -1,43 +1,61 @@
 .jumbotron {
-  min-height: 50vh;
-  width: 100%;
-  background-image: url('../public/images/jumbotron-overlay.png'),
-                    linear-gradient(to bottom, transparent 70%, white),
-                    radial-gradient(rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.5)),
-                    url('../public/images/jumbotron.jpg');
-  background-position: center ;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: grid;
-  place-items: center;
+    min-height: 50vh;
+    width: 100%;
+    background-image: url('../public/images/jumbotron-overlay.png'),
+                        linear-gradient(to bottom, transparent 70%, white),
+                        radial-gradient(rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.5)),
+                        url('../public/images/jumbotron.jpg');
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items: center;
 
-  .jumbotron__inner {
-    color: white;
-    text-align: center;
+    @include tablet {
+        min-height: 80vh;
 
-    h1 {
-        font-family: 'Fraunces', serif;
+        .jumbotron__inner {
+            font-size: 150%;
+        }
     }
 
-    h2 {
-        font-family: 'Dancing Script', cursive;
+    @include desktop {
+        min-height: 100vh;
+
+        .jumbotron__inner {
+            font-size: 200%;
+        }
     }
-  }
+
+    .jumbotron__inner {
+        color: white;
+        text-align: center;
+
+        h1 {
+            font-family: 'Fraunces', serif;
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+        }
+    }
 
 }
 
 .short-desc {
-    
+    width: 100%;
+    background-color: color(myred);
     
     &__inner {
-        background-color: color(myred);
-        margin: 20px;
+        max-width: 768px;
+        margin: 20px auto;
         padding: 10px;
         color: white;
 
         img {
             width: 50%;
             min-width: 268px;
+            max-width: 512px;
             display: block;
             margin: 0 auto;
         }
@@ -54,8 +72,9 @@
 }
 
 .carousel {
+    margin: 0 auto;
     width: 100%;
-    max-height: 400px;
+    max-width: 768px;
     position: relative;
 
     .carousel__title {
@@ -86,7 +105,7 @@
             position: relative;
 
             img {
-                max-height: 400px;
+                max-height: 512px;
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
