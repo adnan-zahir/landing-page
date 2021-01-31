@@ -1,21 +1,18 @@
 const DATA = {
   items: [
     {
-      image: 'carousel_1.png',
-      name: 'FOOD 1',
-      price: 'Rp 12.000',
+      image: 'carousel_1.jpg',
+      name: 'Mie Kocok',
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugit beatae fugiat sequi. Fugiat ullam harum labore id laudantium rerum!',
     },
     {
       image: 'carousel_2.jpg',
-      name: 'FOOD 2',
-      price: 'Rp 6.000',
+      name: 'Cimol',
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugit beatae fugiat sequi. Fugiat ullam harum labore id laudantium rerum!',
     },
     {
-      image: 'carousel_3.png',
-      name: 'FOOD 3',
-      price: 'Rp 20.000',
+      image: 'carousel_3.jpg',
+      name: 'Mie Goreng',
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugit beatae fugiat sequi. Fugiat ullam harum labore id laudantium rerum!',
     },
   ],

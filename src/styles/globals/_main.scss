@@ -56,9 +56,10 @@ main {
                 }
 
                 .menu__title {
-                    background-image:   url('../public/images/menu/menu-overlay.png'),
-                                        radial-gradient(rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.5)),
-                                        url('../public/images/menu/menu-title.jpg');
+                    background-image:   
+                        url('../public/images/menu/menu-overlay.png'),
+                        radial-gradient(rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.5)),
+                        url('../public/images/menu/menu-title.jpg');
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
