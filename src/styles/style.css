@@ -98,6 +98,18 @@
   z-index: 1;
 }
 
+@media screen and (min-width: 768px) {
+  .top-flex .carousel .carousel__title {
+    font-size: 130%;
+  }
+}
+
+@media screen and (min-width: 1224px) {
+  .top-flex .carousel .carousel__title {
+    font-size: 170%;
+  }
+}
+
 .top-flex .carousel .carousel__inner {
   height: 100%;
   width: 100%;

@@ -113,6 +113,14 @@
             font-family: 'Fraunces', serif;
             color: black;
             z-index: 1;
+
+            @include tablet {
+                font-size: 130%;
+            }
+
+            @include desktop {
+                font-size: 170%;
+            }
         }
     
         .carousel__inner {
