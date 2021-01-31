@@ -17,6 +17,10 @@ body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
 
+    @include large-screen {
+        font-size: 150%;
+    }
+
     a {
         min-width: 44px;
         min-height: 44px;

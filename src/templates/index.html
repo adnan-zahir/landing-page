@@ -6,27 +6,32 @@
     <title>Dapoer ExOr</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
 <body>
     <div class="jumbotron">
+        <img src="./images/logo-exor.png" alt="Logo">
         <div class="jumbotron__inner">
             <h1>Dapoer ExOr</h1>
             <h2>Extraordinary</h2>
         </div>
     </div>
     <main>
-        <div class="short-desc">
-            <div class="short-desc__inner">
-                <img src="./images/logo-exor.png" alt="Logo">
-                <h2>Short Desc</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores error, illum ut nulla veniam rem quis at dolore aspernatur nam. Ea earum harum, voluptate nulla deleniti eos numquam explicabo non.</p>
-            </div>
-        </div>
-        <div class="carousel">
-            <div class="carousel__title">
-                <h2>Recommended Menu</h2>
-            </div>
-            <div class="carousel__inner">
+        <div class="top-flex">
+            <!-- <div class="short-desc">
+                <div class="short-desc__inner">
+                    <div class="short-desc__text">
+                        <h2>Short Desc</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores error, illum ut nulla veniam rem quis at dolore aspernatur nam. Ea earum harum, voluptate nulla deleniti eos numquam explicabo non.</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="carousel">
+                <div class="carousel__title">
+                    <h2>Menu Favorit</h2>
+                </div>
+                <div class="carousel__inner">
+                </div>
             </div>
         </div>
         <section id="sect0">
@@ -67,13 +72,19 @@
                         <h3>Contact</h3>
                         <h4>Dapoer ExOr</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique iusto eaque rem dolorem tempore eveniet quibusdam deleniti? Laudantium, odio ea!</p>
-                        <span><i class="material-icons">mail</i> Lorem ipsum dolor sit amet.</span>
-                        <span><i class="material-icons">phone</i> Lorem ipsum dolor sit amet.</span>
-                        <span><i class="material-icons">facebook</i> Lorem ipsum dolor sit amet.</span>
+                        <div><span class="iconify" data-icon="bi:telephone" data-width="32" data-height="32"></span> +62 878-1517-0995</div>
+                        <div><span class="iconify" data-icon="mdi-instagram" data-width="32" data-height="32"></span> @dapoer_exor</div>
                     </div>
                 </div>
             </article>
         </section>
     </main>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
 </body>
 </html>

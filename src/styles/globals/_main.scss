@@ -65,6 +65,10 @@ main {
                     height: 50vh;
                     display: grid;
                     place-items: center;
+
+                    @include desktop {
+                        height: 70vh;
+                    }
                     
                     h2 {
                         text-align: center;
@@ -76,19 +80,36 @@ main {
                 }
                 
                 .menu__item {
+                    justify-self: center;
+                    width: 95%;
+                    min-width: 300px;
+                    max-width: 840px;
                     height: 128px;
                     border: 0;
-                    border-radius: 5px;
-                    box-shadow: 0 3px 5px 3px lightgray;
+                    // border-radius: 5px;
+                    // box-shadow: 0 3px 5px 3px lightgray;
                     margin: 0.5em 10px;
                     display: grid;
                     grid-template-columns: 128px auto 20%;
-                    grid-auto-rows: repeat(2, auto);
+                    grid-auto-rows: repeat(3, auto);
                     grid-template-areas: 
                         'img name price'
+                        'img desc desc'
                         'img input input';
-                    background-color: color(myyellow);
+                    // background-color: color(myyellow);
                     font-family: 'Fraunces', serif;
+
+                    @include large-screen {
+                        height: 154px;
+                        grid-template-columns: 154px;
+
+                        .menu__img {
+
+                            img {
+                                height: 154px;
+                            }
+                        }
+                    }
 
                     .menu__name,
                     .menu__price {
@@ -99,10 +120,10 @@ main {
                         grid-area: img;
 
                         img {
-                            height: 100%;
+                            height: 128px;
                             width: 100%;
                             object-fit: cover;
-                            border-radius: 5px 0 0 5px;
+                            border-radius: 5px;
                         }
                     }
 
@@ -122,6 +143,14 @@ main {
                         text-align: right;
                     }
 
+                    .menu__desc {
+                        grid-area: desc;
+                        padding-left: 15px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
                     .input-number {
                         grid-area: input;
                         text-align: center;
@@ -131,17 +160,28 @@ main {
                             border: 0;
                             border-radius: 50%;
                             color: white;
-                            font-size: 2em;
+                            font-size: 1.5em;
+                            min-height: 30px;
+                            min-width: 30px;
+
+                            @include large-screen {
+                                min-height: 44px;
+                                min-width: 44px;
+                            }
+
+                            &:first-child {
+                                background-color: color(mygreen);
+                            }
                         }
 
                         input {
                             font-size: 1.5em;
                             line-height: 2em;
-                            max-width: 100px;
+                            max-width: 80px;
                             text-align: center;
                             border-radius: 20px;
                             border: 0;
-                            background-color: white;
+                            color: black;
                         }
                     }
                 }
@@ -152,7 +192,7 @@ main {
             display: block;
             width: 90%;
             max-width: 768px;
-            background-color: color(myred);
+            background-color: color(mygreen);
             color: white;
             columns: white;
             padding: 0 1em;
@@ -166,13 +206,17 @@ main {
             bottom: 10px;
             font-size: 1.2em;
             z-index: 10;
+
+            @include desktop {
+                line-height: 2em;
+            }
         }
     }
 
     section#sect2 {
 
         .contact {
-            background-color: color(myred);
+            background-color: rgb(15, 15, 15);
             width: 100%;
 
             .contact__inner {
@@ -205,9 +249,10 @@ main {
                         padding-bottom: 0.5em;
                     }
 
-                    span {
-                        display: block;
-                        line-height: 2em;
+                    div {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 1em;
                     }
                 }
             }

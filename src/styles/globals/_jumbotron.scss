@@ -27,6 +27,22 @@
         }
     }
 
+    img {
+        width: 64px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0.5em;
+
+        @include tablet {
+            width: 114px;
+        }
+
+        @include desktop {
+            width: 192px;
+        }
+    }
+
     .jumbotron__inner {
         color: white;
         text-align: center;
@@ -42,93 +58,109 @@
 
 }
 
-.short-desc {
-    width: 100%;
-    background-color: color(myred);
+.top-flex {
+    display: flex;
+    flex-direction: column;
+
+    // .short-desc {
+    //     width: 100%;
+    //     // background-color: color(myred);
+    //     margin: 3em 0;
+    //     display: grid;
+    //     place-items: center;
+        
+    //     &__inner {
+    //         max-width: 768px;
+    //         max-height: 512px;
+    //         margin: 20px auto;
+    //         padding: 10px;
+    //         // color: white;
+
+    //         .short-desc__text {
+    //             background-color: color(myyellow);
+    //             padding: 20px;
+    //             border-radius: 10px;
+    //         }
     
-    &__inner {
-        max-width: 768px;
-        margin: 20px auto;
-        padding: 10px;
-        color: white;
+    //         h2 {
+    //             font-family: 'Fraunces', serif;
+    //             font-weight: normal;
+    //         }
+    
+    //         p {
+    //             padding-bottom: 10px;
+    //         }
+    //     }
+    // }
+    
+    .carousel {
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
 
-        img {
-            width: 50%;
-            min-width: 268px;
-            max-width: 512px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        h2 {
+    
+        .carousel__title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            padding-top: 0.5em;
+            background-image:   url('../public/images/carousel-overlay.png'),
+                                linear-gradient(to top, transparent 70%, white);        background-position: top ;
+            background-repeat: repeat-x;
+            background-size: contain;
+            text-align: center;
             font-family: 'Fraunces', serif;
-            font-weight: normal;
+            color: black;
+            z-index: 1;
         }
-
-        p {
-            padding-bottom: 10px;
-        }
-    }
-}
-
-.carousel {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 768px;
-    position: relative;
-
-    .carousel__title {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background-image:   url('../public/images/carousel-overlay.png'),
-                            linear-gradient(to top, transparent 70%, white);        background-position: top ;
-        background-repeat: repeat-x;
-        background-size: contain;
-        text-align: center;
-        font-family: 'Fraunces', serif;
-        color: darken(color(myred), 10);
-        z-index: 1;
-    }
-
-    .carousel__inner {
-        height: 100%;
-        width: 100%;
-        display: grid;
-        overflow: hidden;
-
-        .carousel__item {
+    
+        .carousel__inner {
             height: 100%;
             width: 100%;
-            position: relative;
-
-            img {
-                max-height: 512px;
+            display: grid;
+            overflow: hidden;
+    
+            .carousel__item {
                 height: 100%;
                 width: 100%;
-                object-fit: cover;
-                object-position: center;
-            }
+                position: relative;
+    
+                img {
+                    max-height: 512px;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
 
-            .carousel__desc {
-                position: absolute;
-                bottom: 0;
-                padding: 20px;
-                width: 100%;
-                
-                .card {
-                  margin: 0 auto;;
-                  background: rgba( 255, 255, 255, 0.25 );
-                  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-                  backdrop-filter: blur( 10px );
-                  border-radius: 1em;
-                  padding: 10px;
-                  max-width: 500px;
-                  text-align: left;
+                    @include desktop {
+                        max-height: 768px;
+                    }
+
+                    @include large-screen {
+                        max-height: 992px;
+                    }
                 }
-            }
-        }            
+    
+                .carousel__desc {
+                    position: absolute;
+                    bottom: 0;
+                    padding: 20px;
+                    width: 100%;
+                    
+                    .card {
+                      margin: 0 auto;;
+                      background: rgba( 255, 255, 255, 0.25 );
+                      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                      backdrop-filter: blur( 10px );
+                      border-radius: 1em;
+                      padding: 10px;
+                      max-width: 500px;
+                      text-align: left;
+                    }
+                }
+            }            
+        }
     }
 }

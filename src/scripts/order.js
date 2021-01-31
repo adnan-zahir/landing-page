@@ -15,7 +15,7 @@ $(() => {
       completeMessage += subMessage;
     });
 
-    const whatsappNum = '6287828514693';
+    const whatsappNum = '6287815170995';
     const whatsappUrl = 'https://wa.me/';
 
     window.open(`${whatsappUrl}${whatsappNum}?text=${completeMessage}`);

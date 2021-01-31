@@ -32,6 +32,26 @@
   }
 }
 
+.jumbotron img {
+  width: 64px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron img {
+    width: 114px;
+  }
+}
+
+@media screen and (min-width: 1224px) {
+  .jumbotron img {
+    width: 192px;
+  }
+}
+
 .jumbotron .jumbotron__inner {
   color: white;
   text-align: center;
@@ -45,48 +65,29 @@
   font-family: 'Dancing Script', cursive;
 }
 
-.short-desc {
-  width: 100%;
-  background-color: #d64444;
+.top-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.short-desc__inner {
-  max-width: 768px;
-  margin: 20px auto;
-  padding: 10px;
-  color: white;
-}
-
-.short-desc__inner img {
-  width: 50%;
-  min-width: 268px;
-  max-width: 512px;
-  display: block;
-  margin: 0 auto;
-}
-
-.short-desc__inner h2 {
-  font-family: 'Fraunces', serif;
-  font-weight: normal;
-}
-
-.short-desc__inner p {
-  padding-bottom: 10px;
-}
-
-.carousel {
+.top-flex .carousel {
   margin: 0 auto;
   width: 100%;
-  max-width: 768px;
   position: relative;
 }
 
-.carousel .carousel__title {
+.top-flex .carousel .carousel__title {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 50%;
+  padding-top: 0.5em;
   background-image: url("../public/images/carousel-overlay.png"), -webkit-gradient(linear, left bottom, left top, color-stop(70%, transparent), to(white));
   background-image: url("../public/images/carousel-overlay.png"), linear-gradient(to top, transparent 70%, white);
   background-position: top;
@@ -94,11 +95,11 @@
   background-size: contain;
   text-align: center;
   font-family: 'Fraunces', serif;
-  color: #bd2a2a;
+  color: black;
   z-index: 1;
 }
 
-.carousel .carousel__inner {
+.top-flex .carousel .carousel__inner {
   height: 100%;
   width: 100%;
   display: -ms-grid;
@@ -106,13 +107,13 @@
   overflow: hidden;
 }
 
-.carousel .carousel__inner .carousel__item {
+.top-flex .carousel .carousel__inner .carousel__item {
   height: 100%;
   width: 100%;
   position: relative;
 }
 
-.carousel .carousel__inner .carousel__item img {
+.top-flex .carousel .carousel__inner .carousel__item img {
   max-height: 512px;
   height: 100%;
   width: 100%;
@@ -122,14 +123,26 @@
      object-position: center;
 }
 
-.carousel .carousel__inner .carousel__item .carousel__desc {
+@media screen and (min-width: 1224px) {
+  .top-flex .carousel .carousel__inner .carousel__item img {
+    max-height: 768px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .top-flex .carousel .carousel__inner .carousel__item img {
+    max-height: 992px;
+  }
+}
+
+.top-flex .carousel .carousel__inner .carousel__item .carousel__desc {
   position: absolute;
   bottom: 0;
   padding: 20px;
   width: 100%;
 }
 
-.carousel .carousel__inner .carousel__item .carousel__desc .card {
+.top-flex .carousel .carousel__inner .carousel__item .carousel__desc .card {
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.25);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -223,6 +236,12 @@ main section#sect1 .menus .menu-list .menu__title {
   place-items: center;
 }
 
+@media screen and (min-width: 1224px) {
+  main section#sect1 .menus .menu-list .menu__title {
+    height: 70vh;
+  }
+}
+
 main section#sect1 .menus .menu-list .menu__title h2 {
   text-align: center;
   font-weight: normal;
@@ -232,20 +251,32 @@ main section#sect1 .menus .menu-list .menu__title h2 {
 }
 
 main section#sect1 .menus .menu-list .menu__item {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 95%;
+  min-width: 300px;
+  max-width: 840px;
   height: 128px;
   border: 0;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 3px 5px 3px lightgray;
-          box-shadow: 0 3px 5px 3px lightgray;
   margin: 0.5em 10px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 128px auto 20%;
       grid-template-columns: 128px auto 20%;
-  grid-auto-rows: repeat(2, auto);
-      grid-template-areas: 'img name price' 'img input input';
-  background-color: #fff6a7;
+  grid-auto-rows: repeat(3, auto);
+      grid-template-areas: 'img name price' 'img desc desc' 'img input input';
   font-family: 'Fraunces', serif;
+}
+
+@media screen and (min-width: 1920px) {
+  main section#sect1 .menus .menu-list .menu__item {
+    height: 154px;
+    -ms-grid-columns: 154px;
+        grid-template-columns: 154px;
+  }
+  main section#sect1 .menus .menu-list .menu__item .menu__img img {
+    height: 154px;
+  }
 }
 
 main section#sect1 .menus .menu-list .menu__item .menu__name,
@@ -255,17 +286,17 @@ main section#sect1 .menus .menu-list .menu__item .menu__price {
 
 main section#sect1 .menus .menu-list .menu__item .menu__img {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: img;
 }
 
 main section#sect1 .menus .menu-list .menu__item .menu__img img {
-  height: 100%;
+  height: 128px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px;
 }
 
 main section#sect1 .menus .menu-list .menu__item .menu__name {
@@ -288,8 +319,19 @@ main section#sect1 .menus .menu-list .menu__item .menu__price {
   text-align: right;
 }
 
-main section#sect1 .menus .menu-list .menu__item .input-number {
+main section#sect1 .menus .menu-list .menu__item .menu__desc {
   -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: desc;
+  padding-left: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main section#sect1 .menus .menu-list .menu__item .input-number {
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: input;
@@ -301,24 +343,37 @@ main section#sect1 .menus .menu-list .menu__item .input-number button {
   border: 0;
   border-radius: 50%;
   color: white;
-  font-size: 2em;
+  font-size: 1.5em;
+  min-height: 30px;
+  min-width: 30px;
+}
+
+@media screen and (min-width: 1920px) {
+  main section#sect1 .menus .menu-list .menu__item .input-number button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+main section#sect1 .menus .menu-list .menu__item .input-number button:first-child {
+  background-color: #28a119;
 }
 
 main section#sect1 .menus .menu-list .menu__item .input-number input {
   font-size: 1.5em;
   line-height: 2em;
-  max-width: 100px;
+  max-width: 80px;
   text-align: center;
   border-radius: 20px;
   border: 0;
-  background-color: white;
+  color: black;
 }
 
 main section#sect1 .order-button {
   display: block;
   width: 90%;
   max-width: 768px;
-  background-color: #d64444;
+  background-color: #28a119;
   color: white;
   -webkit-columns: white;
           columns: white;
@@ -342,8 +397,14 @@ main section#sect1 .order-button {
   z-index: 10;
 }
 
+@media screen and (min-width: 1224px) {
+  main section#sect1 .order-button {
+    line-height: 2em;
+  }
+}
+
 main section#sect2 .contact {
-  background-color: #d64444;
+  background-color: #0f0f0f;
   width: 100%;
 }
 
@@ -379,9 +440,14 @@ main section#sect2 .contact .contact__inner .contact__content p {
   padding-bottom: 0.5em;
 }
 
-main section#sect2 .contact .contact__inner .contact__content span {
-  display: block;
-  line-height: 2em;
+main section#sect2 .contact .contact__inner .contact__content div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1em;
 }
 
 main section#sect2 .contact .contact__inner::before {
@@ -415,6 +481,12 @@ body {
   font-size: 100%;
   font-family: 'Roboto', sans-serif;
   width: 100%;
+}
+
+@media screen and (min-width: 1920px) {
+  body {
+    font-size: 150%;
+  }
 }
 
 body a {

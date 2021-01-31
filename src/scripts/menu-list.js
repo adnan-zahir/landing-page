@@ -12,6 +12,7 @@ items.forEach((item) => {
     </div>
     <div class="menu__name">${item.name}</div>
     <div class="menu__price">${item.price}</div>
+    <div class="menu__desc">${item.desc}</div>
     <div class="input-number">
         <button>+</button>
         <input type="number" value="0" min="0">
